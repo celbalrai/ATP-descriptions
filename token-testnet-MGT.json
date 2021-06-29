@@ -1,0 +1,42 @@
+- {id} is replaced automatically with the Token Identifier (groupID)
+- For MGT tokens, these fields are required: ticker, name, chain, creator, description, attributes_url
+- The hash is calculated over the text representation of the json string as written by UniValue (2 spaces tab, space after colon)
+- The hash is stored on-chain
+- The signature is calculated over the hash
+- The signature is stored in the dynamic attributes file
+
+https://raw.githubusercontent.com/bytzcurrency/ATP-descriptions/testnet/{id}.json:
+{
+  "atp": {
+    "version": 1,
+    "type": "management"
+  },
+  "ticker": "MGT",
+  "name": "Management Token",
+  "chain": "BYTZ.testnet",
+  "creator": "The Bytz Core developers",
+  "summary": "The MGT token is a tokenized management key on the BYTZ blockchain with special authorities necessary for: (1) the construction of a token system with coherent economic incentives; (2) the inception of Nucleus Tokens (special tokens that have interrelated monetary policies); and (3) the distribution of rewards that sustain this system of cryptographic tokens on the blockchain.",
+  "description": "The Atomic Token Protocol (ATP) introduces cross-coin and cross-token policy. BYTZ utilizes ATP for its reward system and rights structure. Management Token (MGT), Guardian Validator Token (GVT), and Guardian Validators all participate in an interconnected managent system, and are considered the Nucleus Tokens. The MGT token itself is a tokenized management key with special authorities needed for token inception on the blockchain. The MGT token continues to play a role in the management of and access to special features.",
+  "external_url": "https://github.com/bytzcurrency/bytz",
+  "image": "https://raw.githubusercontent.com/celbalrai/bytz/develop/share/pixmaps/bytz-HighContrast-256.png",
+  "attributes_url": "https://raw.githubusercontent.com/bytzcurrency/ATP-descriptions/testnet/{id}_attributes.json"
+}
+
+https://raw.githubusercontent.com/bytzcurrency/ATP-descriptions/testnet/{id}_attributes.json:
+[
+  {
+    "atp": {
+      "metadata_signature": ""
+    }
+  }
+]
+
+encodetokenmetadata "{\"atp\":{\"version\":1,\"type\":\"management\"},\"ticker\":\"MGT\",\"name\":\"Management Token\",\"chain\":\"BYTZ.testnet\",\"creator\":\"The Bytz Core developers\",\"summary\":\"The MGT token is a tokenized management key on the BYTZ blockchain with special authorities necessary for: (1) the construction of a token system with coherent economic incentives; (2) the inception of Nucleus Tokens (special tokens that have interrelated monetary policies); and (3) the distribution of rewards that sustain this system of cryptographic tokens on the blockchain.\",\"description\":\"The Atomic Token Protocol (ATP) introduces cross-coin and cross-token policy. BYTZ utilizes ATP for its reward system and rights structure. Management Token (MGT), Guardian Validator Token (GVT), and Guardian Validators all participate in an interconnected managent system, and are considered the Nucleus Tokens. The MGT token itself is a tokenized management key with special authorities needed for token inception on the blockchain. The MGT token continues to play a role in the management of and access to special features.\",\"external_url\":\"https://github.com/bytzcurrency/bytz\",\"image\":\"https://raw.githubusercontent.com/celbalrai/bytz/develop/share/pixmaps/bytz-HighContrast-256.png\",\"attributes_url\":\"https://raw.githubusercontent.com/bytzcurrency/ATP-descriptions/testnet/{id}_attributes.json\"}"
+
+
+{
+  "hash": "52cb662c6af588d2e8f07dfa158c49ed0adba5c91c16f8402f5d652b94052092",
+  "hex_data": "7b0a202022617470223a207b0a2020202276657273696f6e223a20312c0a2020202274797065223a20226d616e6167656d656e74220a20207d2c0a2020227469636b6572223a20224d4754222c0a2020226e616d65223a20224d616e6167656d656e7420546f6b656e222c0a202022636861696e223a20224259545a2e746573746e6574222c0a20202263726561746f72223a2022546865204279747a20436f726520646576656c6f70657273222c0a20202273756d6d617279223a2022546865204d475420746f6b656e206973206120746f6b656e697a6564206d616e6167656d656e74206b6579206f6e20746865204259545a20626c6f636b636861696e2077697468207370656369616c20617574686f726974696573206e656365737361727920666f723a202831292074686520636f6e737472756374696f6e206f66206120746f6b656e2073797374656d207769746820636f686572656e742065636f6e6f6d696320696e63656e74697665733b202832292074686520696e63657074696f6e206f66204e75636c65757320546f6b656e7320287370656369616c20746f6b656e732074686174206861766520696e74657272656c61746564206d6f6e657461727920706f6c6963696573293b20616e64202833292074686520646973747269627574696f6e206f6620726577617264732074686174207375737461696e20746869732073797374656d206f662063727970746f6772617068696320746f6b656e73206f6e2074686520626c6f636b636861696e2e222c0a2020226465736372697074696f6e223a20225468652041746f6d696320546f6b656e2050726f746f636f6c20284154502920696e74726f64756365732063726f73732d636f696e20616e642063726f73732d746f6b656e20706f6c6963792e204259545a207574696c697a65732041545020666f7220697473207265776172642073797374656d20616e6420726967687473207374727563747572652e204d616e6167656d656e7420546f6b656e20284d4754292c20477561726469616e2056616c696461746f7220546f6b656e2028475654292c20616e6420477561726469616e2056616c696461746f727320616c6c20706172746963697061746520696e20616e20696e746572636f6e6e6563746564206d616e6167656e742073797374656d2c20616e642061726520636f6e7369646572656420746865204e75636c65757320546f6b656e732e20546865204d475420746f6b656e20697473656c66206973206120746f6b656e697a6564206d616e6167656d656e74206b65792077697468207370656369616c20617574686f726974696573206e656564656420666f7220746f6b656e20696e63657074696f6e206f6e2074686520626c6f636b636861696e2e20546865204d475420746f6b656e20636f6e74696e75657320746f20706c6179206120726f6c6520696e20746865206d616e6167656d656e74206f6620616e642061636365737320746f207370656369616c2066656174757265732e222c0a20202265787465726e616c5f75726c223a202268747470733a2f2f6769746875622e636f6d2f6279747a63757272656e63792f6279747a222c0a202022696d616765223a202268747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f63656c62616c7261692f6279747a2f646576656c6f702f73686172652f7069786d6170732f6279747a2d48696768436f6e74726173742d3235362e706e67222c0a202022617474726962757465735f75726c223a202268747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6279747a63757272656e63792f4154502d6465736372697074696f6e732f746573746e65742f7b69647d5f617474726962757465732e6a736f6e220a207d"
+}
+  
+configuremanagementtoken MGT "Management Token" 4 "https://raw.githubusercontent.com/bytzcurrency/ATP-descriptions/testnet/{id}.json" 52cb662c6af588d2e8f07dfa158c49ed0adba5c91c16f8402f5d652b94052092 88223b1811c6102e611a5f83ac71443dab73afd91269a9616b09b031876e6c618b4d28a4926dd80d1fcfdfd8ebf37944 false true

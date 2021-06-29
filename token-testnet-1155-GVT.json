@@ -1,0 +1,57 @@
+- {id} is replaced automatically with the Token Identifier
+- These fields are required: name, chain, creator, description, external_url, signature
+- The hash is calculated over the text representation of all fields, excluding the signature field value
+- The hash is stored on-chain
+- The signature is calculated over the hash
+
+https://yourtickettomusic.com/nft/{id}.json:
+{
+  "atp": {
+    "version": 1,
+    "type": "nft"
+  },
+  "name": "John Doe concert tickets - Garden of Eden tour",
+  "chain": "BYTZ.testnet",
+  "creator": "DoeTours Ltd.",
+  "description": "From April 1st through April 9th, John Doe will visit Eden, NC. This booking grants you access.",
+  "external_url": "https://yourtickettomusic.com/nft/{id}/",
+  "image": "https://www.stockvault.net/data/2018/10/09/255077/preview16.jpg",
+  "attributes": [
+    {
+      "trait_type": "Ticket class",
+      "value": "Gold"
+    },
+    {
+      "display_type": "currency_dollar",
+      "trait_type": "Base price",
+      "value": "50.0"
+    },
+    {
+      "trait_type": "Allow resale",
+      "value": "Yes"
+    }
+  ],
+  "attributes_url": "https://yourtickettomusic.com/nft/{id}_attributes.json",
+}
+
+https://yourtickettomusic.com/nft/{id}_attributes.json:
+[
+  {
+    "atp": {
+      "metadata_signature": ""
+    }
+  },
+  {
+    "display_type": "number",
+    "trait_type": "Seat number",
+    "value": "8"
+  },
+  {
+    "trait_type": "Seat row",
+    "value": "A"
+  }
+]
+
+encodetokenmetadata "{\"atp\":{\"version\":1,\"type\":\"nft\"},\"name\":\"John Doe concert tickets - Garden of Eden tour\",\"chain\":\"BYTZ.testnet\",\"creator\":\"DoeTours Ltd.\",\"description\":\"From April 1st through April 9th, John Doe will visit Eden, NC. This booking grants you access.\",\"external_url\":\"https://yourtickettomusic.com/nft/{id}/\",\"image\":\"https://www.stockvault.net/data/2018/10/09/255077/preview16.jpg\",\"attributes\":[{\"trait_type\":\"Ticket class\",\"value\":\"Gold\"},{\"display_type\":\"currency_dollar\",\"trait_type\":\"Base price\",\"value\":\"50.0\"},{\"trait_type\":\"Allow resale\",\"value\":\"Yes\"}],\"attributes_url\":\"https://yourtickettomusic.com/nft/{id}_attributes.json\"}"
+
+configurenft "John Doe concert tickets - Garden of Eden tour" 300 "https://yourtickettomusic.com/nft/{id}.json" d49f449afe7548d428c1c317a79e3411b2dcf932d7a4880c832333b3f7c7fd24 `echo test.txt.base64` "splash.png" true
